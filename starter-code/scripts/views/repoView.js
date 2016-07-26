@@ -7,7 +7,7 @@
 
   repoView.renderRepos = function() {
     $('#about ul').empty().append(
-      reposObj.withTheAttribute('name')  // TODO: experiment changing this attribute!
+      reposObj.withTheAttribute('forks')  // TODO: experiment changing this attribute!
       .map(repoCompiler)
     );
   };
@@ -15,6 +15,6 @@
     Pass in some view function as a higher order callback, so our repos
     will render after the data is loaded. */
 
-    'https://api.github.com/users/codefellows-seattle-301d9/repos'
+  reposObj.requestRepos();
 
 });
