@@ -4,9 +4,9 @@
     /* DONE: Let's compile our new template!
        Save the result of invoking Handlebars in this 'repoCompiler' variable
        that we will pass to the append method below. */
-  var repoCompiler = function(viewFunction) {
+  var repoCompiler = function(source) {
     var template = Handlebars.compile($('#repo-template')).text();
-    return template(viewFunction);
+    return template(source);
   };  // Finish the Handlebars method here!
 
   repoView.renderRepos = function() {
@@ -14,11 +14,13 @@
       reposObj.withTheAttribute('name')  // TODO: experiment changing this attribute!
       .map(repoCompiler)
     );
+    console.log('appending has occurred!');
   };
-/* TODO: Call the function that loads (or 'requests') our repo data.
+/* DONE: Call the function that loads (or 'requests') our repo data.
     Pass in some view function as a higher order callback, so our repos
     will render after the data is loaded. */
-  repoView.repoCompiler(repoView.renderRepos);
+
+  reposObj.requestRepos(repoView.renderRepos);
 
   module.repoView = repoView;
 })(window);

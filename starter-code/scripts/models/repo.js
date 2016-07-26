@@ -15,10 +15,10 @@
         'Authorization': 'token ' + token,
       },
       success: function(data, message, xhr) {
-        console.log(data);
         data.forEach(function(obj) {
           reposObj.allRepos.push(obj);
         });
+        callback();
       }
     });
   };
@@ -28,8 +28,6 @@
       return aRepo[myAttr];
     });
   };
-
-  reposObj.requestRepos();
 
   module.reposObj = reposObj;
 })(window);
