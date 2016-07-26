@@ -4,10 +4,8 @@
     /* DONE: Let's compile our new template!
        Save the result of invoking Handlebars in this 'repoCompiler' variable
        that we will pass to the append method below. */
-  var repoCompiler = function(source) {
-    var template = Handlebars.compile($('#repo-template')).text();
-    return template(source);
-  };  // Finish the Handlebars method here!
+  var repoCompiler = Handlebars.compile($('#repo-template').text());
+  // Finish the Handlebars method here!
 
   repoView.renderRepos = function() {
     $('#about ul').empty().append(
