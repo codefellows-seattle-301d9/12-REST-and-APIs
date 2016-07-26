@@ -19,7 +19,6 @@
         data.forEach(function(elem) {
           reposObj.allRepos.push(elem);
         });
-        // console.log(reposObj.allRepos);
       }
     }).done(nextFunction);
   };
@@ -28,7 +27,6 @@
     return reposObj.allRepos.filter(function(aRepo) {
       return aRepo[myAttr];
     });
-    // console.log(reposObj.withTheAttribute('forks'));
   };
 
   module.reposObj = reposObj;
