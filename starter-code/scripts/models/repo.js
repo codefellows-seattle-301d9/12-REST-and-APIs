@@ -8,15 +8,19 @@
       Do not forget to call the callback! */
     $.ajax({
       url: 'https://api.github.com/users/codefellows-seattle-301d9/repos',
-      type: GET;
+      type: 'GET',
       headers: {
-        'Authorization': 'token ' + token,
+        // 'Authorization': 'token ' + token,
       },
       success: function(data, message, xhr) {
         console.log(data);
+        data.forEach(function(cur){
+          (reposObj.allRepos).push(cur);
+          console.log(reposObj.allRepos);
+        });
+        callback();
       }
-    })
-    callback();
+    });
   };
 
   reposObj.withTheAttribute = function(myAttr) {
