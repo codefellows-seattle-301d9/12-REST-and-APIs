@@ -16,6 +16,9 @@
       },
       success: function(data, message, xhr) {
         console.log(data);
+        data.forEach(function(obj) {
+          reposObj.allRepos.push(obj);
+        });
       }
     });
   };
@@ -25,6 +28,8 @@
       return aRepo[myAttr];
     });
   };
+
+  reposObj.requestRepos();
 
   module.reposObj = reposObj;
 })(window);
