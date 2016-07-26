@@ -4,7 +4,10 @@
        Save the result of invoking Handlebars in this 'repoCompiler' variable
        that we will pass to the append method below. */
   var repoCompiler = function(data) {
-    return Handlebars.compile($('#repo-template').html())(data);
+    var source = $('#repo-template').html();
+    var template = Handlebars.compile(source);
+    // return Handlebars.compile($('#repo-template').html())(data);
+    return template(data);
   };  // Finish the Handlebars method here!
 
   repoView.renderRepos = function() {
