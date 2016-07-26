@@ -10,7 +10,6 @@
       reposObj.withTheAttribute('name')  // TODO: - DONE experiment changing this attribute!
       .map(repoCompiler)
     );
-    console.log(reposObj.allRepos);
   };
 /* TODO: Call the function that loads (or 'requests') our repo data.
     Pass in some view function as a higher order callback, so our repos

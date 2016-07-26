@@ -13,10 +13,8 @@
         // 'Authorization': 'token ' + token,
       },
       success: function(data, message, xhr) {
-        console.log(data);
         data.forEach(function(cur){
           (reposObj.allRepos).push(cur);
-          console.log(reposObj.allRepos);
         });
         callback();
       }
