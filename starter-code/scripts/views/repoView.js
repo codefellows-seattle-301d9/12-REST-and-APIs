@@ -15,4 +15,6 @@
     Pass in some view function as a higher order callback, so our repos
     will render after the data is loaded. */
 
+    'https://api.github.com/users/codefellows-seattle-301d9/repos'
+
 });
